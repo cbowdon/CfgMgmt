@@ -1,0 +1,38 @@
+set nocompatible
+
+execute pathogen#infect()
+
+" Syntax highlighting and indenting
+filetype plugin indent on
+syntax on
+set encoding=utf-8
+
+" Standard layout
+set nowrap
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set number
+set numberwidth=4
+
+" Search highlighting
+set hlsearch
+nnoremap <CR> :noh<CR><CR>
+
+" Trim trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Emacs-style command line movement
+cnoremap <C-a> <Home>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-d> <Delete>
+cnoremap <C-e> <End>
+
+" Hide backups and swaps
+set backupdir=~/.vim/backups
+set directory=~/.vim/backups
+
+" TypeScript Tools
+" npm install -g typescript-tools
+set rtp+=/usr/local/lib/node_modules/typescript-tools
