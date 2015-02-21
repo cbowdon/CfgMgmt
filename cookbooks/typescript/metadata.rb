@@ -1,0 +1,11 @@
+name             'typescript'
+maintainer       'The Authors'
+maintainer_email 'you@example.com'
+license          'all_rights'
+description      'Installs/Configures typescript'
+long_description 'Installs/Configures typescript'
+version          '0.1.0'
+recipe           'typescript', 'Installs npm, typescript, tsd and typescript-tools'
+recipe           'typescript::bash', 'Installs tree, makes bash more habitable'
+recipe           'typescript::vim', 'Sets up Vim for TypeScript development'
+

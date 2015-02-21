@@ -1,31 +1,23 @@
-#
-# Cookbook Name:: linux_typescript
-# Recipe:: default
-#
-package 'git'
-package 'tree'
+dev_user = node['typescript']['user']
+home = node['typescript']['home']
+
 package 'vim'
-package 'npm'
 
-home = '/home/vagrant'
-
-template "#{home}/.bash_profile" do
-	source 'bash_profile.erb'
-end
+ENV['EDITOR'] = 'vim' # assumes unix - otherwise use chef env resource
 
 template "#{home}/.vimrc" do
 	source 'vimrc.erb'
 end
 
 directory "#{home}/.vim/" do
-    owner 'vagrant'
+    owner dev_user
     mode '0755'
     action :create
 end
 
 [ 'backups', 'autoload', 'bundle' ].each do |dir|
     directory "#{home}/.vim/#{dir}" do
-        owner 'vagrant'
+        owner dev_user
         mode '0755'
         action :create
     end

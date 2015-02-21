@@ -11,7 +11,10 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision "chef_zero" do |chef|
-    chef.add_recipe "vagrant_typescript"
+    chef.add_recipe "typescript"
+    chef.add_recipe "typescript::vim"
+    chef.add_recipe "typescript::bash"
+    # chef.json = { "user" => "vagrant", "home" => "/home/vagrant" }
   end
 
   config.vm.provision "file", source: "~/.gitconfig", destination: ".gitconfig"
