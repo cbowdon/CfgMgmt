@@ -5,6 +5,7 @@ log "dev_user = #{dev_user}"
 log "home = #{home}"
 
 package 'git'
+package 'nodejs-legacy' # fix for different node binary name in Ubuntu
 package 'npm'
 
 require 'mkmf'
@@ -20,3 +21,4 @@ end
 npm_global_install 'typescript'
 npm_global_install 'tsd'
 npm_global_install 'typescript-tools'
+npm_global_install 'browserify'
