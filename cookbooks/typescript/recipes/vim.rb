@@ -3,8 +3,6 @@ home = node['typescript']['home']
 
 package 'vim'
 
-ENV['EDITOR'] = 'vim' # assumes unix - otherwise use chef env resource
-
 template "#{home}/.vimrc" do
 	source 'vimrc.erb'
 end

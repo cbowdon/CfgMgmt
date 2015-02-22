@@ -1,9 +1,16 @@
+dev_user = node['typescript']['user']
+home = node['typescript']['home']
+
+log "dev_user = #{dev_user}"
+log "home = #{home}"
+
 package 'git'
 package 'npm'
 
 require 'mkmf'
 
 def npm_global_install prog
+    Chef::Log.info "npm install -g #{prog}"
     bash "install #{prog}" do
         not_if { find_executable prog }
         code "npm install -g #{prog}"
