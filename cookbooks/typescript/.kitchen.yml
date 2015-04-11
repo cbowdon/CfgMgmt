@@ -12,5 +12,5 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[linux_typescript::default]
+      - recipe[typescript::default]
     attributes:
