@@ -20,6 +20,14 @@ end
 
 npm_global_install 'typescript'
 npm_global_install 'tsd'
-npm_global_install 'typescript-tools'
 npm_global_install 'browserify'
 npm_global_install 'jake'
+
+git "#{home}" do
+    repository 'git://github.com/clausreinke/typescript-tools.git'
+end
+
+bash 'install typescript tools' do
+    cwd ::File.dirname("#{home}/typescript-tools")
+    code "npm install -g"
+end
