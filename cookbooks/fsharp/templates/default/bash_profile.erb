@@ -1,0 +1,12 @@
+# vi: set ft=sh :
+# let's have a nicer prompt:
+PS1='\[\e[0;32m\]\h: \W\[\e[0m\] '
+
+# Enable colors for ls
+alias ls="ls --color"
+alias ll="ls -l --color"
+
+# Colorful git!
+git config --global color.diff auto
+git config --global color.status auto
+git config --global color.branch auto

@@ -1,0 +1,11 @@
+name             'fsharp'
+maintainer       'The Authors'
+maintainer_email 'you@example.com'
+license          'all_rights'
+description      'Installs/Configures F#'
+long_description 'Installs/Configures F#'
+version          '0.1.0'
+recipe           'fsharp', 'Installs open-source F# development environment'
+recipe           'fsharp::bash', 'Installs tree, makes bash more habitable'
+recipe           'fsharp::vim', 'Sets up Vim for F# development'
+
