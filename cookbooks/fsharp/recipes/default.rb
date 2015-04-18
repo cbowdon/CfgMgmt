@@ -15,3 +15,12 @@ end
 
 package 'mono-complete'
 package 'fsharp'
+
+bash 'Get nuget' do
+  user dev_user
+  cwd home
+  code <<-EOH
+  curl https://nuget.org/nuget.exe > nuget.exe
+  EOH
+end
+
