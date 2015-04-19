@@ -15,13 +15,14 @@ bash 'Add Xamarin Mono PPA' do
 end
 
 package 'mono-complete'
+package 'gendarme'
 package 'fsharp'
 
 bash 'Get nuget' do
   user dev_user
   cwd home
   code <<-EOH
-  curl https://nuget.org/nuget.exe > nuget.exe
+  curl https://api.nuget.org/downloads/nuget.exe > nuget.exe
   EOH
 end
 
