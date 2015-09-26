@@ -15,14 +15,21 @@ bash 'Add Xamarin Mono PPA' do
 end
 
 package 'mono-complete'
-package 'gendarme'
 package 'fsharp'
 
 bash 'Get nuget' do
   user dev_user
   cwd home
   code <<-EOH
-  curl https://api.nuget.org/downloads/nuget.exe > nuget.exe
+  curl -L https://nuget.org/nuget.exe -o nuget.exe
+  mozroots --import --sync
   EOH
 end
 
+git "#{home}/Project" do
+  repository 'https://github.com/fsprojects/ProjectScaffold.git'
+  revision 'master'
+  user dev_user
+end
+
+log "Run build.sh in Project to scaffold project"

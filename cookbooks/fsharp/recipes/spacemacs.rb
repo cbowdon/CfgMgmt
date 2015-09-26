@@ -13,7 +13,3 @@ git "#{home}/.emacs.d" do
   enable_submodules true
   user dev_user
 end
-
-template "#{home}/dotspacemacs_README" do
-	source 'spacemacs.erb'
-end
