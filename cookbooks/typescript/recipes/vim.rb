@@ -36,3 +36,7 @@ end
 git "#{home}/.vim/bundle/vim-js-indent" do
     repository 'git://github.com/jason0x43/vim-js-indent.git'
 end
+
+git "#{home}" do
+    repository 'git://github.com/clausreinke/typescript-tools.vim.git'
+end
