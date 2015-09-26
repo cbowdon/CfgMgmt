@@ -6,7 +6,10 @@ This is a(n embryonic) project to abstract away repeated config management tasks
 Usage at this stage is manually copying/linking to the appropriate files. Putting together a helper CLI app is on my todo-list.
 
 Currently included setups:
-* vagrant: Ubuntu 12.04 on VirtualBox set up for TypeScript development in Vim
+* vagrant:
+  + Ubuntu 14.04 on VirtualBox set up for TypeScript development with Vim
+  + Ubuntu 14.04 on VirtualBox set up for TypeScript development with Spacemacs
+  + Ubuntu 14.04 on VirtualBox set up for F# development with Spacemacs
 
 ## TODO
 A helper CLI program would be nice, something like:
