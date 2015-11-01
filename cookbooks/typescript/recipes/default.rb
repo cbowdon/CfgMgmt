@@ -23,11 +23,16 @@ npm_global_install 'tsd'
 npm_global_install 'browserify'
 npm_global_install 'jake'
 
-git "#{home}" do
+ts_tools = 'typescript-tools'
+
+git "#{home}/#{ts_tools}" do
     repository 'git://github.com/clausreinke/typescript-tools.git'
 end
 
-bash 'install typescript tools' do
-    cwd ::File.dirname("#{home}/typescript-tools")
+log "yaoooo"
+log ::File.dirname("#{home}/#{ts_tools}")
+
+bash "install #{ts_tools}" do
+    cwd '/home/vagrant/typescript-tools'
     code "npm install -g"
 end

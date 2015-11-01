@@ -5,20 +5,21 @@
 # https://docs.vagrantup.com.
 Vagrant.configure(2) do |config|
 
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = 'ubuntu/trusty64'
 
-  config.vm.provider "virtualbox" do |vb|
+  config.vm.provider 'virtualbox' do |vb|
     vb.name = ::Dir.pwd.split(::File::SEPARATOR).last
     vb.cpus = 2
     vb.memory = 1024
   end
 
-  config.vm.provision "chef_zero" do |chef|
-    chef.add_recipe "typescript"
-    chef.add_recipe "typescript::vim"
-    chef.add_recipe "typescript::bash"
+  config.vm.provision 'chef_zero' do |chef|
+    chef.add_recipe 'apt'
+    chef.add_recipe 'typescript'
+    chef.add_recipe 'typescript::bash'
+    chef.add_recipe 'typescript::spacemacs'
   end
 
-  config.vm.provision "file", source: "~/.gitconfig", destination: ".gitconfig"
+  config.vm.provision 'file', source: '~/.gitconfig', destination: '.gitconfig'
 
 end
